@@ -47,11 +47,41 @@
             <span class="section-label">Асуудал</span>
             <p class="section-text issues">{{ item.update.issues }}</p>
           </div>
+          <div v-else="!item.update.issues" class="update-section">
+            <span class="section-label">Асуудал</span>
+            <p class="no-update">Байхгүй</p>
+          </div>
         </template>
 
         <p v-else class="no-update">No update yet</p>
       </article>
     </div>
+    
+    <div class="zuraas">
+
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-dates">
+        <div class="filter-field">
+          <label>From</label>
+          <input type="date" value="2026-01-01">
+        </div>
+        <div class="filter-divider">→</div>
+        <div class="filter-field">
+          <label>To</label>
+          <input type="date" value="2026-06-30">
+        </div>
+      </div>
+
+      <div class="filter-actions">
+        <button type="button" class="quick-range">Today</button>
+        <button type="button" class="quick-range">This week</button>
+        <button type="button" class="quick-range">This month</button>
+        <button type="button" class="apply">Apply</button>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -225,7 +255,7 @@ onMounted(fetchData)
 }
 
 .update-card.is-today {
-  box-shadow: 0 0 0 1px #10a84a;
+  box-shadow: 0 0 0 1px #0c8999;
 }
 
 .card-head {
@@ -318,4 +348,116 @@ onMounted(fetchData)
   margin: auto 0 0;
   font-style: italic;
 }
+
+.filter-bar {
+    --ink: #333;
+    --ink-soft: #888;
+    --line: #e0ddd5;
+    --accent: #0c8999;
+    --paper: #fff;
+    --radius: 8px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 22px;
+    background: #ffffff;
+    border: 1px solid #e0ddd5;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  .filter-dates {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .filter-field { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 6px;
+  }
+
+  .filter-field label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .filter-field input[type="date"] {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    padding: 4px 2px 8px;
+    min-width: 140px;
+  }
+
+  .filter-field input[type="date"]:focus { outline: none; border-bottom-color: var(--accent); }
+
+  .filter-divider {
+    color: var(--ink-soft);
+    font-size: 13px;
+    padding-bottom: 10px;
+    flex-shrink: 0;
+  }
+
+  .filter-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, auto));
+    gap: 10px;
+    align-items: end;
+    flex: 1;
+    min-width: min(100%, 320px);
+    justify-content: end;
+  }
+
+  .quick-range {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .quick-range:hover, .quick-range.active {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  button.apply {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: #0c8999;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  button.apply:hover { background: var(--accent); }
+
+  .zuraas{
+    margin-top: 20px;
+    border-bottom: 1px solid #eeee;
+  }
+
 </style>

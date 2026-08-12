@@ -375,7 +375,7 @@ textarea:focus {
 }
 
 .btn-submit {
-  background: #10a84a;
+  background: #0c8999;
   border: none;
   border-radius: 8px;
   padding: 8px 20px;

@@ -7,6 +7,7 @@
     <nav class="navbar">
       <RouterLink class="nav-link" to="/">Home</RouterLink>
       <RouterLink class="nav-link" to="/update">Update</RouterLink>
+      <RouterLink class="nav-link" to="/alcohol">Өнөөдөр яах уу?</RouterLink>
     </nav>
 
     <main class="page">
