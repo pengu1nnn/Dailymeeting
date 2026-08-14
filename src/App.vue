@@ -4,6 +4,9 @@
 
 <template>
   <div class="app-shell">
+    <div>
+      <h1 class="home-title">Гөрөө Meeting</h1>
+    </div>
     <nav class="navbar">
       <RouterLink class="nav-link" to="/">Home</RouterLink>
       <RouterLink class="nav-link" to="/update">Update</RouterLink>
@@ -47,10 +50,16 @@
 
   .nav-link.router-link-active {
     color: #fff;
-    background: #10a84a;
+    background: #0c8999;
   }
 
   .page {
     width: 100%;
   }
+
+  .home-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
 </style>
