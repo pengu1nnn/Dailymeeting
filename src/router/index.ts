@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import Update from '@/views/Update.vue'
 import AlcoholView from '@/views/AlcoholView.vue'
-import FaqView from '@/views/faqView.vue'
+import FaqView from '@/views/FaqView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
