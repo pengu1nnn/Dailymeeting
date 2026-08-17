@@ -11,6 +11,7 @@
       <RouterLink class="nav-link" to="/">Home</RouterLink>
       <RouterLink class="nav-link" to="/update">Update</RouterLink>
       <RouterLink class="nav-link" to="/alcohol">Өнөөдөр яах уу?</RouterLink>
+      <RouterLink class="nav-link" to="/faq">FAQ</RouterLink>
     </nav>
 
     <main class="page">
