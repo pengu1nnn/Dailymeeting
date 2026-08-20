@@ -4,7 +4,7 @@
       <header class="chat-header">
         <div>
           <h2 class="chat-title">Өнөөдөр яах уу?</h2>
-          <p class="chat-sub">One room · everyone can chat</p>
+          <p class="chat-sub">Хувь хүний нууцыг чандлан хадгална.</p>
         </div>
         <span class="live-dot" :class="{ offline: !!error }" />
       </header>
